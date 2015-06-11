@@ -8,10 +8,54 @@
 
 #import <Foundation/Foundation.h>
 
-int main(int argc, const char * argv[]) {
+// 1.
+@interface Letter : NSObject;
+
+- (void)read;
+
+@end
+//
+
+@implementation Letter
+
+- (void)read
+{
+  NSLog(@"You read a touching personal message.");
+}
+
+@end
+
+// 2.
+@interface Newspaper : NSObject;
+
+- (void)read;
+
+@end
+
+@implementation Newspaper
+
+- (void)read
+{
+  NSLog(@"You read a report of the latest going-ons worldwide.");
+}
+
+@end
+
+int main(int argc, const char * argv[])
+{
+  
   @autoreleasepool {
-      // insert code here...
-      NSLog(@"Hello, World!");
+    
+    // Create two new objects.
+    // 2b.
+        Newspaper *todaysPaper = [[Newspaper alloc] init];
+    // 1b.
+    Letter *todaysLetter = [[Letter alloc] init];
+    
+    // 1c.
+    [todaysLetter read];
+    // 2c.
+        [todaysPaper read];
   }
-    return 0;
+  return 0;
 }
